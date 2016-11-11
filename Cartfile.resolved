@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "4.0.1"
+github "mxcl/PromiseKit" "4.0.5"
 github "typelift/Swiftz" "0.6.0"
 github "dropbox/SwiftyDropbox" "4.1.1"

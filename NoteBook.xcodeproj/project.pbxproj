@@ -10,6 +10,8 @@
 		EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; };
 		EE1F21291DD5718A004721E8 /* Swiftz.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE1F212B1DD5FBF8004721E8 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */; };
+		EE1F213F1DD6616A004721E8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F21351DD660E7004721E8 /* PromiseKit.framework */; };
+		EE1F21401DD6616A004721E8 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F21351DD660E7004721E8 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; };
 		EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE41850C1DD3A96F00BCA260 /* Alamofire.framework */; };
@@ -71,6 +73,48 @@
 			proxyType = 2;
 			remoteGlobalIDString = 8240CDD81C3A41F000EF4D29;
 			remoteInfo = "Swiftz-watchOS";
+		};
+		EE1F21341DD660E7004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
+			remoteInfo = PromiseKit;
+		};
+		EE1F21361DD660E7004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 631751A81D59766500A9DDDC;
+			remoteInfo = "PMKA+Tests";
+		};
+		EE1F21381DD660E7004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6314113C1D59795700E24B9E;
+			remoteInfo = PMKBridgeTests;
+		};
+		EE1F213A1DD660E7004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 630019221D596292003B4E30;
+			remoteInfo = PMKCoreTests;
+		};
+		EE1F213C1DD660E7004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6314112F1D5978D700E24B9E;
+			remoteInfo = PMKDispatchTests;
+		};
+		EE1F21411DD6616A004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 63B0AC561D595E1B00FA21D9;
+			remoteInfo = PromiseKit;
 		};
 		EE4184F71DD3A93000BCA260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -169,6 +213,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */,
+				EE1F21401DD6616A004721E8 /* PromiseKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +223,7 @@
 /* Begin PBXFileReference section */
 		EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swiftz.xcodeproj; path = Carthage/Checkouts/Swiftz/Swiftz.xcodeproj; sourceTree = "<group>"; };
 		EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = Carthage/Checkouts/PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
 		EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyDropbox.xcodeproj; path = Carthage/Checkouts/SwiftyDropbox/Source/SwiftyDropbox/SwiftyDropbox.xcodeproj; sourceTree = "<group>"; };
 		EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxWorker.swift; sourceTree = "<group>"; };
@@ -199,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */,
+				EE1F213F1DD6616A004721E8 /* PromiseKit.framework in Frameworks */,
 				EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */,
 				EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */,
 			);
@@ -224,6 +271,18 @@
 				EE1F21221DD57112004721E8 /* Swiftz.framework */,
 				EE1F21241DD57112004721E8 /* Swiftz-tvOSTests.xctest */,
 				EE1F21261DD57112004721E8 /* Swiftz.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE1F212D1DD660E7004721E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE1F21351DD660E7004721E8 /* PromiseKit.framework */,
+				EE1F21371DD660E7004721E8 /* PMKA+Tests.xctest */,
+				EE1F21391DD660E7004721E8 /* PMKBridgeTests.xctest */,
+				EE1F213B1DD660E7004721E8 /* PMKCoreTests.xctest */,
+				EE1F213D1DD660E7004721E8 /* PMKDispatchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +313,7 @@
 		EEC040C41DD39F5400AAFD5D = {
 			isa = PBXGroup;
 			children = (
+				EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */,
 				EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */,
 				EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */,
 				EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */,
@@ -313,6 +373,7 @@
 			);
 			dependencies = (
 				EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */,
+				EE1F21421DD6616A004721E8 /* PBXTargetDependency */,
 			);
 			name = NoteBook;
 			productName = NoteBook;
@@ -375,6 +436,10 @@
 				{
 					ProductGroup = EE4185011DD3A96F00BCA260 /* Products */;
 					ProjectRef = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = EE1F212D1DD660E7004721E8 /* Products */;
+					ProjectRef = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
 				},
 				{
 					ProductGroup = EE4184F31DD3A93000BCA260 /* Products */;
@@ -441,6 +506,41 @@
 			fileType = wrapper.framework;
 			path = Swiftz.framework;
 			remoteRef = EE1F21251DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21351DD660E7004721E8 /* PromiseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PromiseKit.framework;
+			remoteRef = EE1F21341DD660E7004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21371DD660E7004721E8 /* PMKA+Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PMKA+Tests.xctest";
+			remoteRef = EE1F21361DD660E7004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21391DD660E7004721E8 /* PMKBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKBridgeTests.xctest;
+			remoteRef = EE1F21381DD660E7004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F213B1DD660E7004721E8 /* PMKCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKCoreTests.xctest;
+			remoteRef = EE1F213A1DD660E7004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F213D1DD660E7004721E8 /* PMKDispatchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PMKDispatchTests.xctest;
+			remoteRef = EE1F213C1DD660E7004721E8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */ = {
@@ -551,6 +651,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EE1F21421DD6616A004721E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PromiseKit;
+			targetProxy = EE1F21411DD6616A004721E8 /* PBXContainerItemProxy */;
+		};
 		EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftyDropbox iOS";

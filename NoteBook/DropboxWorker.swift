@@ -39,7 +39,7 @@ let dropboxClient = DropboxClientsManager.authorizedClient
 // Steps to upload a file:
 // 1. Get title name from user input and use as file base name.
 // 2. Find out existance of same title name content in file system. Check folder
-//    anddifferent versions of the file. If no folder exists, create one.
+//    and different versions of the file. If no folder exists, create one.
 // 3. Find out the version for the file and combine the title wih the version
 //    picked as the file name.
 // 4. Upload file.
@@ -76,13 +76,12 @@ extension DropboxWorkable {
     
     func listAll(
         queue: DispatchQueue,
-        completionHandler: @escaping ([Files.Metadata]?, ErrorTypeInFileSystem?) -> Void,
-        under fullPath: String,
+        under dir: String,
         errorHandler: @escaping (ErrorTypeInFileSystem?) -> Void,
         next: @escaping ([Files.Metadata]) -> Void) {
         let curriedContinue = curry(continueListing)
         let partialAppliedContinue = uncurry(curriedContinue(queue)([])(errorHandler)(next))
-        dropboxClient?.files.listFolder(path: fullPath).response(queue: queue, completionHandler: partialAppliedContinue)
+        dropboxClient?.files.listFolder(path: dir).response(queue: queue, completionHandler: partialAppliedContinue)
     }
     
 
@@ -92,7 +91,25 @@ extension DropboxWorkable {
             completionHandler(folderMetadata?.id, folderCallError)
         })
     }
-    func upload(completionHandler: @escaping (String?, ErrorTypeInFileSystem?) -> Void, fileData: Data, withName: String, underPath: String) {
+    func upload(
+        queue: DispatchQueue,
+        completionHandler: @escaping (String?, ErrorTypeInFileSystem?) -> Void,
+        errorHandler: @escaping (ErrorTypeInFileSystem?) -> Void,
+        fileData: Data,
+        withName: String,
+        under dir: String) {
+        listAll(
+            queue: queue,
+            under: dir,
+            errorHandler: errorHandler,
+            next: {
+                // 
+                if $0
+        })
+        
+        
+        
+        
         dropboxClient?.files.upload(path: underPath, input: fileData).response(completionHandler: { fileMetadata, uploadCallError in
             completionHandler(fileMetadata?.id, uploadCallError)
         })
@@ -114,8 +131,6 @@ extension DropboxWorkable {
         return ints.reduce(ints.first!, { max($0, $1) })
     }
     
-    func prepareToUpload(withName: String, underPath: String) {
-        
-    }
+
 }
 
