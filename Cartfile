@@ -1,0 +1,4 @@
+# SwiftyDropbox
+github "https://github.com/dropbox/SwiftyDropbox" ~> 4.1.0
+# Swiftz
+github "https://github.com/typelift/Swiftz" ~> 0.6.0

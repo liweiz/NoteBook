@@ -1,0 +1,762 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; };
+		EE1F21291DD5718A004721E8 /* Swiftz.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE1F212B1DD5FBF8004721E8 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */; };
+		EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; };
+		EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE41850C1DD3A96F00BCA260 /* Alamofire.framework */; };
+		EE41851B1DD3AA7900BCA260 /* DropboxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */; };
+		EE41851F1DD3AF9900BCA260 /* FileSystemPickerCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41851E1DD3AF9900BCA260 /* FileSystemPickerCtl.swift */; };
+		EEC040D11DD39F5400AAFD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC040D01DD39F5400AAFD5D /* AppDelegate.swift */; };
+		EEC040D31DD39F5400AAFD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC040D21DD39F5400AAFD5D /* ViewController.swift */; };
+		EEC040D81DD39F5400AAFD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC040D71DD39F5400AAFD5D /* Assets.xcassets */; };
+		EEC040DB1DD39F5400AAFD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC040D91DD39F5400AAFD5D /* LaunchScreen.storyboard */; };
+		EEC040E61DD39F5400AAFD5D /* NoteBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC040E51DD39F5400AAFD5D /* NoteBookTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE1F21191DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84A88F981A71DF7F003D53CF;
+			remoteInfo = Swiftz;
+		};
+		EE1F211B1DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84A88FA31A71DF7F003D53CF;
+			remoteInfo = SwiftzTests;
+		};
+		EE1F211D1DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84DF751E1B0BD17700C912B0;
+			remoteInfo = "Swiftz-iOS";
+		};
+		EE1F211F1DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84DF75281B0BD17700C912B0;
+			remoteInfo = "Swiftz-iOSTests";
+		};
+		EE1F21211DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8240CD1C1C3A395F00EF4D29;
+			remoteInfo = "Swiftz-tvOS";
+		};
+		EE1F21231DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8240CD251C3A396000EF4D29;
+			remoteInfo = "Swiftz-tvOSTests";
+		};
+		EE1F21251DD57112004721E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8240CDD81C3A41F000EF4D29;
+			remoteInfo = "Swiftz-watchOS";
+		};
+		EE4184F71DD3A93000BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F2C6FCC51D89E16800E0DD9E;
+			remoteInfo = "SwiftyDropbox iOS";
+		};
+		EE4184F91DD3A93000BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F2C6FCD51D89E1A900E0DD9E;
+			remoteInfo = "SwiftyDropbox macOS";
+		};
+		EE4184FD1DD3A95900BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F2C6FCC41D89E16800E0DD9E;
+			remoteInfo = "SwiftyDropbox iOS";
+		};
+		EE41850B1DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		EE41850D1DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		EE41850F1DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire macOS";
+		};
+		EE4185111DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire macOS Tests";
+		};
+		EE4185131DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		EE4185151DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS Tests";
+		};
+		EE4185171DD3A96F00BCA260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		EEC040E21DD39F5400AAFD5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEC040C51DD39F5400AAFD5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC040CC1DD39F5400AAFD5D;
+			remoteInfo = NoteBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE1F21281DD5715C004721E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE1F21291DD5718A004721E8 /* Swiftz.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4184FF1DD3A95900BCA260 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swiftz.xcodeproj; path = Carthage/Checkouts/Swiftz/Swiftz.xcodeproj; sourceTree = "<group>"; };
+		EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyDropbox.xcodeproj; path = Carthage/Checkouts/SwiftyDropbox/Source/SwiftyDropbox/SwiftyDropbox.xcodeproj; sourceTree = "<group>"; };
+		EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxWorker.swift; sourceTree = "<group>"; };
+		EE41851E1DD3AF9900BCA260 /* FileSystemPickerCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemPickerCtl.swift; sourceTree = "<group>"; };
+		EEC040CD1DD39F5400AAFD5D /* NoteBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC040D01DD39F5400AAFD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEC040D21DD39F5400AAFD5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEC040D71DD39F5400AAFD5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEC040DA1DD39F5400AAFD5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEC040DC1DD39F5400AAFD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC040E11DD39F5400AAFD5D /* NoteBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC040E51DD39F5400AAFD5D /* NoteBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBookTests.swift; sourceTree = "<group>"; };
+		EEC040E71DD39F5400AAFD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEC040CA1DD39F5400AAFD5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */,
+				EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */,
+				EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC040DE1DD39F5400AAFD5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE1F21061DD57112004721E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE1F211A1DD57112004721E8 /* Swiftz.framework */,
+				EE1F211C1DD57112004721E8 /* SwiftzTests.xctest */,
+				EE1F211E1DD57112004721E8 /* Swiftz.framework */,
+				EE1F21201DD57112004721E8 /* Swiftz-iOSTests.xctest */,
+				EE1F21221DD57112004721E8 /* Swiftz.framework */,
+				EE1F21241DD57112004721E8 /* Swiftz-tvOSTests.xctest */,
+				EE1F21261DD57112004721E8 /* Swiftz.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE4184F31DD3A93000BCA260 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */,
+				EE4184FA1DD3A93000BCA260 /* SwiftyDropbox.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE4185011DD3A96F00BCA260 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE41850C1DD3A96F00BCA260 /* Alamofire.framework */,
+				EE41850E1DD3A96F00BCA260 /* Alamofire iOS Tests.xctest */,
+				EE4185101DD3A96F00BCA260 /* Alamofire.framework */,
+				EE4185121DD3A96F00BCA260 /* Alamofire macOS Tests.xctest */,
+				EE4185141DD3A96F00BCA260 /* Alamofire.framework */,
+				EE4185161DD3A96F00BCA260 /* Alamofire tvOS Tests.xctest */,
+				EE4185181DD3A96F00BCA260 /* Alamofire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEC040C41DD39F5400AAFD5D = {
+			isa = PBXGroup;
+			children = (
+				EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */,
+				EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */,
+				EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */,
+				EEC040CF1DD39F5400AAFD5D /* NoteBook */,
+				EEC040E41DD39F5400AAFD5D /* NoteBookTests */,
+				EEC040CE1DD39F5400AAFD5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEC040CE1DD39F5400AAFD5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEC040CD1DD39F5400AAFD5D /* NoteBook.app */,
+				EEC040E11DD39F5400AAFD5D /* NoteBookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEC040CF1DD39F5400AAFD5D /* NoteBook */ = {
+			isa = PBXGroup;
+			children = (
+				EE41851E1DD3AF9900BCA260 /* FileSystemPickerCtl.swift */,
+				EEC040D01DD39F5400AAFD5D /* AppDelegate.swift */,
+				EEC040D21DD39F5400AAFD5D /* ViewController.swift */,
+				EEC040D71DD39F5400AAFD5D /* Assets.xcassets */,
+				EEC040D91DD39F5400AAFD5D /* LaunchScreen.storyboard */,
+				EEC040DC1DD39F5400AAFD5D /* Info.plist */,
+				EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */,
+				EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */,
+			);
+			path = NoteBook;
+			sourceTree = "<group>";
+		};
+		EEC040E41DD39F5400AAFD5D /* NoteBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEC040E51DD39F5400AAFD5D /* NoteBookTests.swift */,
+				EEC040E71DD39F5400AAFD5D /* Info.plist */,
+			);
+			path = NoteBookTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEC040CC1DD39F5400AAFD5D /* NoteBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC040EA1DD39F5400AAFD5D /* Build configuration list for PBXNativeTarget "NoteBook" */;
+			buildPhases = (
+				EEC040C91DD39F5400AAFD5D /* Sources */,
+				EEC040CA1DD39F5400AAFD5D /* Frameworks */,
+				EEC040CB1DD39F5400AAFD5D /* Resources */,
+				EE4184FF1DD3A95900BCA260 /* Embed Frameworks */,
+				EE1F21281DD5715C004721E8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */,
+			);
+			name = NoteBook;
+			productName = NoteBook;
+			productReference = EEC040CD1DD39F5400AAFD5D /* NoteBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEC040E01DD39F5400AAFD5D /* NoteBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC040ED1DD39F5400AAFD5D /* Build configuration list for PBXNativeTarget "NoteBookTests" */;
+			buildPhases = (
+				EEC040DD1DD39F5400AAFD5D /* Sources */,
+				EEC040DE1DD39F5400AAFD5D /* Frameworks */,
+				EEC040DF1DD39F5400AAFD5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEC040E31DD39F5400AAFD5D /* PBXTargetDependency */,
+			);
+			name = NoteBookTests;
+			productName = NoteBookTests;
+			productReference = EEC040E11DD39F5400AAFD5D /* NoteBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEC040C51DD39F5400AAFD5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Liwei Zhang";
+				TargetAttributes = {
+					EEC040CC1DD39F5400AAFD5D = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4LRPEBVABG;
+						ProvisioningStyle = Automatic;
+					};
+					EEC040E01DD39F5400AAFD5D = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4LRPEBVABG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EEC040CC1DD39F5400AAFD5D;
+					};
+				};
+			};
+			buildConfigurationList = EEC040C81DD39F5400AAFD5D /* Build configuration list for PBXProject "NoteBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEC040C41DD39F5400AAFD5D;
+			productRefGroup = EEC040CE1DD39F5400AAFD5D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EE4185011DD3A96F00BCA260 /* Products */;
+					ProjectRef = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = EE4184F31DD3A93000BCA260 /* Products */;
+					ProjectRef = EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */;
+				},
+				{
+					ProductGroup = EE1F21061DD57112004721E8 /* Products */;
+					ProjectRef = EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EEC040CC1DD39F5400AAFD5D /* NoteBook */,
+				EEC040E01DD39F5400AAFD5D /* NoteBookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EE1F211A1DD57112004721E8 /* Swiftz.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Swiftz.framework;
+			remoteRef = EE1F21191DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F211C1DD57112004721E8 /* SwiftzTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftzTests.xctest;
+			remoteRef = EE1F211B1DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F211E1DD57112004721E8 /* Swiftz.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Swiftz.framework;
+			remoteRef = EE1F211D1DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21201DD57112004721E8 /* Swiftz-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Swiftz-iOSTests.xctest";
+			remoteRef = EE1F211F1DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21221DD57112004721E8 /* Swiftz.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Swiftz.framework;
+			remoteRef = EE1F21211DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21241DD57112004721E8 /* Swiftz-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Swiftz-tvOSTests.xctest";
+			remoteRef = EE1F21231DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE1F21261DD57112004721E8 /* Swiftz.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Swiftz.framework;
+			remoteRef = EE1F21251DD57112004721E8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyDropbox.framework;
+			remoteRef = EE4184F71DD3A93000BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4184FA1DD3A93000BCA260 /* SwiftyDropbox.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyDropbox.framework;
+			remoteRef = EE4184F91DD3A93000BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE41850C1DD3A96F00BCA260 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = EE41850B1DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE41850E1DD3A96F00BCA260 /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = EE41850D1DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4185101DD3A96F00BCA260 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = EE41850F1DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4185121DD3A96F00BCA260 /* Alamofire macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire macOS Tests.xctest";
+			remoteRef = EE4185111DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4185141DD3A96F00BCA260 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = EE4185131DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4185161DD3A96F00BCA260 /* Alamofire tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire tvOS Tests.xctest";
+			remoteRef = EE4185151DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE4185181DD3A96F00BCA260 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = EE4185171DD3A96F00BCA260 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEC040CB1DD39F5400AAFD5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC040DB1DD39F5400AAFD5D /* LaunchScreen.storyboard in Resources */,
+				EEC040D81DD39F5400AAFD5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC040DF1DD39F5400AAFD5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEC040C91DD39F5400AAFD5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE41851B1DD3AA7900BCA260 /* DropboxWorker.swift in Sources */,
+				EEC040D31DD39F5400AAFD5D /* ViewController.swift in Sources */,
+				EE41851F1DD3AF9900BCA260 /* FileSystemPickerCtl.swift in Sources */,
+				EE1F212B1DD5FBF8004721E8 /* StringHelper.swift in Sources */,
+				EEC040D11DD39F5400AAFD5D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC040DD1DD39F5400AAFD5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC040E61DD39F5400AAFD5D /* NoteBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyDropbox iOS";
+			targetProxy = EE4184FD1DD3A95900BCA260 /* PBXContainerItemProxy */;
+		};
+		EEC040E31DD39F5400AAFD5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC040CC1DD39F5400AAFD5D /* NoteBook */;
+			targetProxy = EEC040E21DD39F5400AAFD5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEC040D91DD39F5400AAFD5D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC040DA1DD39F5400AAFD5D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEC040E81DD39F5400AAFD5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEC040E91DD39F5400AAFD5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEC040EB1DD39F5400AAFD5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4LRPEBVABG;
+				INFOPLIST_FILE = NoteBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liwei.TCTA.NoteBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EEC040EC1DD39F5400AAFD5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4LRPEBVABG;
+				INFOPLIST_FILE = NoteBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liwei.TCTA.NoteBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EEC040EE1DD39F5400AAFD5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4LRPEBVABG;
+				INFOPLIST_FILE = NoteBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liwei.TCTA.NoteBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteBook.app/NoteBook";
+			};
+			name = Debug;
+		};
+		EEC040EF1DD39F5400AAFD5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4LRPEBVABG;
+				INFOPLIST_FILE = NoteBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liwei.TCTA.NoteBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteBook.app/NoteBook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEC040C81DD39F5400AAFD5D /* Build configuration list for PBXProject "NoteBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC040E81DD39F5400AAFD5D /* Debug */,
+				EEC040E91DD39F5400AAFD5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC040EA1DD39F5400AAFD5D /* Build configuration list for PBXNativeTarget "NoteBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC040EB1DD39F5400AAFD5D /* Debug */,
+				EEC040EC1DD39F5400AAFD5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC040ED1DD39F5400AAFD5D /* Build configuration list for PBXNativeTarget "NoteBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC040EE1DD39F5400AAFD5D /* Debug */,
+				EEC040EF1DD39F5400AAFD5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEC040C51DD39F5400AAFD5D /* Project object */;
+}
