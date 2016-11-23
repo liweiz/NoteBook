@@ -10,8 +10,8 @@
 		EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; };
 		EE1F21291DD5718A004721E8 /* Swiftz.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE1F211E1DD57112004721E8 /* Swiftz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE1F212B1DD5FBF8004721E8 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */; };
-		EE1F213F1DD6616A004721E8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F21351DD660E7004721E8 /* PromiseKit.framework */; };
-		EE1F21401DD6616A004721E8 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F21351DD660E7004721E8 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE22CF341DDA218300DEBD3E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE22CF0D1DDA215400DEBD3E /* RxSwift.framework */; };
+		EE22CF351DDA218300DEBD3E /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE22CF0D1DDA215400DEBD3E /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; };
 		EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE41850C1DD3A96F00BCA260 /* Alamofire.framework */; };
@@ -74,47 +74,152 @@
 			remoteGlobalIDString = 8240CDD81C3A41F000EF4D29;
 			remoteInfo = "Swiftz-watchOS";
 		};
-		EE1F21341DD660E7004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF0C1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
-			remoteInfo = PromiseKit;
+			remoteGlobalIDString = C8A56AD71AD7424700B4673B;
+			remoteInfo = "RxSwift-iOS";
 		};
-		EE1F21361DD660E7004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF0E1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 631751A81D59766500A9DDDC;
-			remoteInfo = "PMKA+Tests";
+			remoteGlobalIDString = C88BB8711B07E5ED0064D411;
+			remoteInfo = "RxSwift-macOS";
 		};
-		EE1F21381DD660E7004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF101DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6314113C1D59795700E24B9E;
-			remoteInfo = PMKBridgeTests;
+			remoteGlobalIDString = D2EA280C1BB9B5A200880ED3;
+			remoteInfo = "RxSwift-tvOS";
 		};
-		EE1F213A1DD660E7004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF121DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 630019221D596292003B4E30;
-			remoteInfo = PMKCoreTests;
+			remoteGlobalIDString = C8F0C0021BBBFB8B001B112F;
+			remoteInfo = "RxSwift-watchOS";
 		};
-		EE1F213C1DD660E7004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF141DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6314112F1D5978D700E24B9E;
-			remoteInfo = PMKDispatchTests;
+			remoteGlobalIDString = C809396D1B8A71760088E94D;
+			remoteInfo = "RxCocoa-iOS";
 		};
-		EE1F21411DD6616A004721E8 /* PBXContainerItemProxy */ = {
+		EE22CF161DDA215400DEBD3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C80939E71B8A71840088E94D;
+			remoteInfo = "RxCocoa-macOS";
+		};
+		EE22CF181DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2138C751BB9BE9800339B5C;
+			remoteInfo = "RxCocoa-tvOS";
+		};
+		EE22CF1A1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F0C04B1BBBFBB9001B112F;
+			remoteInfo = "RxCocoa-watchOS";
+		};
+		EE22CF1C1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8093BC71B8A71F00088E94D;
+			remoteInfo = "RxBlocking-iOS";
+		};
+		EE22CF1E1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8093C451B8A71FC0088E94D;
+			remoteInfo = "RxBlocking-macOS";
+		};
+		EE22CF201DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2EBEB811BB9B99D003A27DC;
+			remoteInfo = "RxBlocking-tvOS";
+		};
+		EE22CF221DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F0C0581BBBFBCE001B112F;
+			remoteInfo = "RxBlocking-watchOS";
+		};
+		EE22CF241DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA50C1C25C44800CCFEA4;
+			remoteInfo = "RxTest-iOS";
+		};
+		EE22CF261DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA51D1C25C4B500CCFEA4;
+			remoteInfo = "RxTest-macOS";
+		};
+		EE22CF281DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA52E1C25C4C000CCFEA4;
+			remoteInfo = "RxTest-tvOS";
+		};
+		EE22CF2A1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA53F1C25C4CC00CCFEA4;
+			remoteInfo = "RxTest-watchOS";
+		};
+		EE22CF2C1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83508C31C386F6F0027C24C;
+			remoteInfo = "AllTests-iOS";
+		};
+		EE22CF2E1DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83509841C38740E0027C24C;
+			remoteInfo = "AllTests-tvOS";
+		};
+		EE22CF301DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83509941C38742C0027C24C;
+			remoteInfo = "AllTests-macOS";
+		};
+		EE22CF321DDA215400DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C85BA04B1C3878740075D68E;
+			remoteInfo = PerformanceTests;
+		};
+		EE22CF361DDA218300DEBD3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 63B0AC561D595E1B00FA21D9;
-			remoteInfo = PromiseKit;
+			remoteGlobalIDString = C8A56AD61AD7424700B4673B;
+			remoteInfo = "RxSwift-iOS";
 		};
 		EE4184F71DD3A93000BCA260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -212,8 +317,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EE22CF351DDA218300DEBD3E /* RxSwift.framework in Embed Frameworks */,
 				EE4184FC1DD3A95900BCA260 /* SwiftyDropbox.framework in Embed Frameworks */,
-				EE1F21401DD6616A004721E8 /* PromiseKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +328,7 @@
 /* Begin PBXFileReference section */
 		EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swiftz.xcodeproj; path = Carthage/Checkouts/Swiftz/Swiftz.xcodeproj; sourceTree = "<group>"; };
 		EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
-		EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = Carthage/Checkouts/PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
+		EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
 		EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyDropbox.xcodeproj; path = Carthage/Checkouts/SwiftyDropbox/Source/SwiftyDropbox/SwiftyDropbox.xcodeproj; sourceTree = "<group>"; };
 		EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxWorker.swift; sourceTree = "<group>"; };
@@ -244,8 +349,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE22CF341DDA218300DEBD3E /* RxSwift.framework in Frameworks */,
 				EE1F21271DD5712D004721E8 /* Swiftz.framework in Frameworks */,
-				EE1F213F1DD6616A004721E8 /* PromiseKit.framework in Frameworks */,
 				EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */,
 				EE4184FB1DD3A95900BCA260 /* SwiftyDropbox.framework in Frameworks */,
 			);
@@ -275,14 +380,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE1F212D1DD660E7004721E8 /* Products */ = {
+		EE22CEF61DDA215300DEBD3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE1F21351DD660E7004721E8 /* PromiseKit.framework */,
-				EE1F21371DD660E7004721E8 /* PMKA+Tests.xctest */,
-				EE1F21391DD660E7004721E8 /* PMKBridgeTests.xctest */,
-				EE1F213B1DD660E7004721E8 /* PMKCoreTests.xctest */,
-				EE1F213D1DD660E7004721E8 /* PMKDispatchTests.xctest */,
+				EE22CF0D1DDA215400DEBD3E /* RxSwift.framework */,
+				EE22CF0F1DDA215400DEBD3E /* RxSwift.framework */,
+				EE22CF111DDA215400DEBD3E /* RxSwift.framework */,
+				EE22CF131DDA215400DEBD3E /* RxSwift.framework */,
+				EE22CF151DDA215400DEBD3E /* RxCocoa.framework */,
+				EE22CF171DDA215400DEBD3E /* RxCocoa.framework */,
+				EE22CF191DDA215400DEBD3E /* RxCocoa.framework */,
+				EE22CF1B1DDA215400DEBD3E /* RxCocoa.framework */,
+				EE22CF1D1DDA215400DEBD3E /* RxBlocking.framework */,
+				EE22CF1F1DDA215400DEBD3E /* RxBlocking.framework */,
+				EE22CF211DDA215400DEBD3E /* RxBlocking.framework */,
+				EE22CF231DDA215400DEBD3E /* RxBlocking.framework */,
+				EE22CF251DDA215400DEBD3E /* RxTest.framework */,
+				EE22CF271DDA215400DEBD3E /* RxTest.framework */,
+				EE22CF291DDA215400DEBD3E /* RxTest.framework */,
+				EE22CF2B1DDA215400DEBD3E /* RxTest.framework */,
+				EE22CF2D1DDA215400DEBD3E /* AllTests-iOS.xctest */,
+				EE22CF2F1DDA215400DEBD3E /* AllTests-tvOS.xctest */,
+				EE22CF311DDA215400DEBD3E /* AllTests-macOS.xctest */,
+				EE22CF331DDA215400DEBD3E /* PerformanceTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,7 +433,7 @@
 		EEC040C41DD39F5400AAFD5D = {
 			isa = PBXGroup;
 			children = (
-				EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */,
+				EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */,
 				EE1F21051DD57112004721E8 /* Swiftz.xcodeproj */,
 				EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */,
 				EE4184F21DD3A93000BCA260 /* SwiftyDropbox.xcodeproj */,
@@ -373,7 +493,7 @@
 			);
 			dependencies = (
 				EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */,
-				EE1F21421DD6616A004721E8 /* PBXTargetDependency */,
+				EE22CF371DDA218300DEBD3E /* PBXTargetDependency */,
 			);
 			name = NoteBook;
 			productName = NoteBook;
@@ -438,8 +558,8 @@
 					ProjectRef = EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = EE1F212D1DD660E7004721E8 /* Products */;
-					ProjectRef = EE1F212C1DD660E7004721E8 /* PromiseKit.xcodeproj */;
+					ProductGroup = EE22CEF61DDA215300DEBD3E /* Products */;
+					ProjectRef = EE22CEF51DDA215300DEBD3E /* Rx.xcodeproj */;
 				},
 				{
 					ProductGroup = EE4184F31DD3A93000BCA260 /* Products */;
@@ -508,39 +628,144 @@
 			remoteRef = EE1F21251DD57112004721E8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE1F21351DD660E7004721E8 /* PromiseKit.framework */ = {
+		EE22CF0D1DDA215400DEBD3E /* RxSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = PromiseKit.framework;
-			remoteRef = EE1F21341DD660E7004721E8 /* PBXContainerItemProxy */;
+			path = RxSwift.framework;
+			remoteRef = EE22CF0C1DDA215400DEBD3E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE1F21371DD660E7004721E8 /* PMKA+Tests.xctest */ = {
+		EE22CF0F1DDA215400DEBD3E /* RxSwift.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PMKA+Tests.xctest";
-			remoteRef = EE1F21361DD660E7004721E8 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = EE22CF0E1DDA215400DEBD3E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE1F21391DD660E7004721E8 /* PMKBridgeTests.xctest */ = {
+		EE22CF111DDA215400DEBD3E /* RxSwift.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKBridgeTests.xctest;
-			remoteRef = EE1F21381DD660E7004721E8 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = EE22CF101DDA215400DEBD3E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE1F213B1DD660E7004721E8 /* PMKCoreTests.xctest */ = {
+		EE22CF131DDA215400DEBD3E /* RxSwift.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKCoreTests.xctest;
-			remoteRef = EE1F213A1DD660E7004721E8 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = EE22CF121DDA215400DEBD3E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EE1F213D1DD660E7004721E8 /* PMKDispatchTests.xctest */ = {
+		EE22CF151DDA215400DEBD3E /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = EE22CF141DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF171DDA215400DEBD3E /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = EE22CF161DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF191DDA215400DEBD3E /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = EE22CF181DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF1B1DDA215400DEBD3E /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = EE22CF1A1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF1D1DDA215400DEBD3E /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = EE22CF1C1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF1F1DDA215400DEBD3E /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = EE22CF1E1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF211DDA215400DEBD3E /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = EE22CF201DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF231DDA215400DEBD3E /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = EE22CF221DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF251DDA215400DEBD3E /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = EE22CF241DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF271DDA215400DEBD3E /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = EE22CF261DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF291DDA215400DEBD3E /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = EE22CF281DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF2B1DDA215400DEBD3E /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = EE22CF2A1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF2D1DDA215400DEBD3E /* AllTests-iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = PMKDispatchTests.xctest;
-			remoteRef = EE1F213C1DD660E7004721E8 /* PBXContainerItemProxy */;
+			path = "AllTests-iOS.xctest";
+			remoteRef = EE22CF2C1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF2F1DDA215400DEBD3E /* AllTests-tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AllTests-tvOS.xctest";
+			remoteRef = EE22CF2E1DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF311DDA215400DEBD3E /* AllTests-macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AllTests-macOS.xctest";
+			remoteRef = EE22CF301DDA215400DEBD3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EE22CF331DDA215400DEBD3E /* PerformanceTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PerformanceTests.app;
+			remoteRef = EE22CF321DDA215400DEBD3E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		EE4184F81DD3A93000BCA260 /* SwiftyDropbox.framework */ = {
@@ -651,10 +876,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EE1F21421DD6616A004721E8 /* PBXTargetDependency */ = {
+		EE22CF371DDA218300DEBD3E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PromiseKit;
-			targetProxy = EE1F21411DD6616A004721E8 /* PBXContainerItemProxy */;
+			name = "RxSwift-iOS";
+			targetProxy = EE22CF361DDA218300DEBD3E /* PBXContainerItemProxy */;
 		};
 		EE4184FE1DD3A95900BCA260 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

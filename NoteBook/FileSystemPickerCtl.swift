@@ -33,11 +33,11 @@ class FileSystemPickerCtl: UIViewController {
     }
     */
 
-    func myButtonInControllerPressed() {
-        DropboxClientsManager.authorizeFromController(UIApplication.shared, controller: self, openURL: { (url: URL) -> Void in
-            UIApplication.shared.open(url, options: <#T##[String : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
-        })
-    }
+//    func myButtonInControllerPressed() {
+//        DropboxClientsManager.authorizeFromController(UIApplication.shared, controller: self, openURL: { (url: URL) -> Void in
+//            UIApplication.shared.open(url, options: <#T##[String : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+//        })
+//    }
 }
 
 

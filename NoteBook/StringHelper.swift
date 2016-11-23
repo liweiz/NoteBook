@@ -17,5 +17,6 @@ extension String {
             return nil
         }
         return (reversedSelf[reversedRange.upperBound..<reversedSelf.endIndex].reverse(), reversedSelf[reversedSelf.startIndex..<reversedRange.lowerBound].reverse())
+    }
 }
 

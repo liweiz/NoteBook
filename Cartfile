@@ -1,6 +1,6 @@
 # SwiftyDropbox
-github "https://github.com/dropbox/SwiftyDropbox" ~> 4.1.0
+github "dropbox/SwiftyDropbox" ~> 4.1.0
 # Swiftz
-github "https://github.com/typelift/Swiftz" ~> 0.6.0
-# PromiseKit
-github "mxcl/PromiseKit" ~> 4.0
+github "typelift/Swiftz" ~> 0.6.0
+# RxSwift
+github "ReactiveX/RxSwift" ~> 3.0
