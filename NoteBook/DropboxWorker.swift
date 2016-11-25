@@ -12,6 +12,10 @@ import Swiftz
 import RxSwift
 //import Alamofire
 
+//App key: y87c23cufz9ds2k
+//App secret: hltjj0dhg866hek
+//access token: _t5sqh9TeTsAAAAAAAAABzyJ2nBj3OG1wocKmGMCPOCYziDUnXKN6xQCdh21XNTt
+
 enum FileSystemError : ErrorTypeInFileSystem {
     case noResponse
     case unknownResponseError
@@ -94,7 +98,11 @@ let dropboxClient = DropboxClientsManager.authorizedClient
 //    picked as the file name.
 // 4. Upload file.
 
-protocol DropboxWorkable : FileSystemWorkable {
+protocol RxWorkable {
+    var disposeBag: DisposeBag { get set }
+}
+
+protocol DropboxWorkable : FileSystemWorkable, RxWorkable {
 //    func continueListing(currentResult: Files.ListFolderResult?, error: ErrorTypeInFileSystem?, previousOnes: [Files.Metadata]?)
 //    func listAll(queue: DispatchQueue, completionHandler: @escaping (Files.ListFolderResult?, ErrorTypeInFileSystem?, [Files.Metadata]?) -> Void, under fullPath: String)
 //    func list(client: DropboxClient, on queue: DispatchQueue?, under dir: String?, from cursor: String?, existingResults: [Files.Metadata], finalHandler: ([Files.Metadata]) -> Void, errorHandler: (Error) -> Void)
@@ -105,6 +113,19 @@ extension CallError : Error {}
 
 
 extension DropboxWorkable {
+    func makeSureDirAvailable(client: DropboxClient,
+                              on queue: DispatchQueue? = nil,
+                              for dirPath: String,
+                              doneHandler: @escaping (String) -> Void,
+                              errorHandler: @escaping (Error) -> Void) {
+        let q = queue ?? DispatchQueue.main
+        let request = client.files.listFolder(path: dirPath)
+        let responsable = AnyDropboxResponsable<Files.ListFolderResult, Files.ListFolderError, RpcRequest<Files.ListFolderResultSerializer, Files.ListFolderErrorSerializer>>(dropboxResponsable: request.response)
+        let observable = observableDropboxResponse(responsable: responsable)
+        observable
+            .subscribe(onNext: { doneHandler(dirPath) })
+            .addDisposableTo(disposeBag)
+    }
     
     func continueListing(client: DropboxClient,
                          on queue: DispatchQueue? = nil,
@@ -115,118 +136,105 @@ extension DropboxWorkable {
         let request = client.files.listFolderContinue(cursor: cursor)
         let responsable = AnyDropboxResponsable<Files.ListFolderResult, Files.ListFolderContinueError, RpcRequest<Files.ListFolderResultSerializer, Files.ListFolderContinueErrorSerializer>>(dropboxResponsable: request.response)
         let observable = observableDropboxResponse(responsable: responsable)
-        observable.subscribe(onNext: { result in
+        observable
+            .subscribe(onNext: { result in
             if result.hasMore {
-                self.continueListing(client: client, on: queue, from: result.cursor, previousResults: previousResults + result.entries, doneHandler: doneHandler, errorHandler: errorHandler)
+                self.continueListing(client: client,
+                                     on: queue,
+                                     from: result.cursor,
+                                     previousResults: previousResults + result.entries,
+                                     doneHandler: doneHandler,
+                                     errorHandler: errorHandler)
             } else {
                 doneHandler(previousResults + result.entries)
             }
+                
         },
-                             onError: errorHandler)
-        
+                             onError: { errorHandler($0) },
+                             onCompleted:  { print("continueListing completed.") })
+            .addDisposableTo(disposeBag)
     }
     
     func listFolderAll(client: DropboxClient,
-              on queue: DispatchQueue? = nil,
-              under dir: String,
-              finalHandler: @escaping ([Files.Metadata]) -> Void,
-              errorHandler: @escaping (Error) -> Void) {
+                       on queue: DispatchQueue? = nil,
+                       path: String,
+                       doneHandler: @escaping ([Files.Metadata]) -> Void,
+                       errorHandler: @escaping (Error) -> Void) {
         let q = queue ?? DispatchQueue.main
-//
-//        
-//        
-//        client.files.listFolder(path: dir).promisedResponse(queue: q).then(on: q, execute: {
-//            if $0.hasMore {
-//                continueListing(from: $0.cursor, previousResults: $0.entries)
-//            } else {
-//                finalHandler($0.entries)
-//            }
-//        }).catch(on: q, execute: errorHandler)
-//    }
+        let request = client.files.listFolder(path: path)
+        let responsable = AnyDropboxResponsable<Files.ListFolderResult, Files.ListFolderError, RpcRequest<Files.ListFolderResultSerializer, Files.ListFolderErrorSerializer>>(dropboxResponsable: request.response)
+        let observable = observableDropboxResponse(queue: q, responsable: responsable)
+        observable
+            .subscribe(onNext: {
+                if $0.hasMore {
+                    self.continueListing(client: client, on: q, from: $0.cursor, previousResults: $0.entries, doneHandler: doneHandler, errorHandler: errorHandler)
+                } else {
+                    doneHandler($0.entries)
+                }
+            },
+                       onError: errorHandler,
+                       onCompleted: { print("initialListing completed.") })
+            .addDisposableTo(disposeBag)
+        
+    }
     
     func afterFolderListing(under dir: String, namesUnder: [String], seperator: String, action: (Int?) -> Void) {
         let maxInt = maxTailingInt(among: namesUnder, seperator: seperator)
         action(maxInt)
     }
     
-//    func promiseOneArgVoidFunc<T>(f: @escaping (T) -> Void) -> (T) -> Promise<T> {
-//        return {
-//            f($0)
-//            return Promise(value: $0)
-//        }
-//    }
+
     
-    func makeSureNoConflict(client: DropboxClient,
-                      on queue: DispatchQueue? = nil,
-                      with name: String,
-                      under dir: String,
-                      nameConflictHandler: @escaping () -> Void,
-                      completionHandler: @escaping () -> Void,
-                      errorHandler: @escaping (Error) -> Void) {
+    func makeSureNoNameConflict(client: DropboxClient,
+                                on queue: DispatchQueue? = nil,
+                                with name: String,
+                                under dir: String,
+                                nameConflictHandler: @escaping () -> Void,
+                                completionHandler: @escaping ([Files.Metadata]) -> Void,
+                                errorHandler: @escaping (Error) -> Void) {
         let q = queue ?? DispatchQueue.main
-        listFolderAll(client: client, on: q, under: dir, finalHandler: { r in
-            if (r.map { $0.name }).contains(name) {
-                nameConflictHandler()
-            } else {
-                completionHandler()
-            }
+        listFolderAll(client: client, on: q, path: dir, doneHandler: {
+            ($0.map { $0.name }).contains(name) ? nameConflictHandler() : completionHandler($0)
         }, errorHandler: errorHandler)
     }
 
     
-//    func createFolder(client: DropboxClient,
-//                      on queue: DispatchQueue? = nil,
-//                      with name: String,
-//                      under dir: String,
-//                      nameConflictHandler: @escaping () -> Void,
-//                      completionHandler: @escaping (Files.FolderMetadataSerializer.ValueType) -> Void,
-//                      errorHandler: @escaping (Error) -> Void) {
-//        let q = queue ?? DispatchQueue.main
-//        makeSureNoConflict(client: client,
-//                           with: name,
-//                           under: dir,
-//                           nameConflictHandler: nameConflictHandler,
-//                           completionHandler: {
-//                            client
-//                                .files
-//                                .createFolder(path: name)
-//                                .promisedResponse(queue: q)
-//                                .then(on: q, execute: self.promiseOneArgVoidFunc(f: completionHandler) )
-//                                .catch(execute: errorHandler)
-//                           },
-//                           errorHandler: errorHandler)
-//    }
+    func createFolder(client: DropboxClient,
+                      on queue: DispatchQueue? = nil,
+                      with name: String,
+                      under dir: String,
+                      nameConflictHandler: @escaping () -> Void,
+                      completionHandler: @escaping (Files.FolderMetadataSerializer.ValueType) -> Void,
+                      errorHandler: @escaping (Error) -> Void) {
+        let q = queue ?? DispatchQueue.main
+        let request = client.files.createFolder(path: dir + "/" + name)
+        let responsable = AnyDropboxResponsable<Files.FolderMetadata, Files.CreateFolderError, RpcRequest<Files.FolderMetadataSerializer, Files.CreateFolderErrorSerializer>>(dropboxResponsable: request.response)
+        let observable = observableDropboxResponse(queue: q, responsable: responsable)
+        observable
+            .subscribe(onNext: { completionHandler($0) },
+                       onError: { errorHandler($0) },
+                       onCompleted: { print("folderCreation completed.") })
+            .addDisposableTo(disposeBag)
+    }
     
-//    func upload(client: DropboxClient,
-//                on queue: DispatchQueue? = nil,
-//                fileData: Data,
-//                with name: String,
-//                under dir: String,
-//                nameConflictHandler: @escaping () -> Void,
-//                completionHandler: @escaping () -> Void,
-//                errorHandler: @escaping (Error) -> Void) {
-//        let q = queue ?? DispatchQueue.main
-//        makeSureNoConflict(client: client,
-//                           with: name,
-//                           under: dir,
-//                           nameConflictHandler: nameConflictHandler,
-//                           completionHandler: {
-//                            client
-//                                .files
-//                                .upload(path: dir + "/" + name, input: fileData)
-//                                .promisedResponse(queue: q)
-//                                .then(on: q, execute: completionHandler)
-//                                .catch(execute: errorHandler)
-//        },
-//                           errorHandler: errorHandler)
-//        
-//        
-//        
-//        
-//        dropboxClient?.files.upload(path: dir, input: fileData).response(completionHandler: { fileMetadata, uploadCallError in
-//            completionHandler(fileMetadata?.id, uploadCallError)
-//        })
-//    }
+    func upload(client: DropboxClient,
+                on queue: DispatchQueue? = nil,
+                fileData: Data,
+                with name: String,
+                under dir: String,
+                nameConflictHandler: @escaping () -> Void,
+                completionHandler: @escaping (Files.FileMetadata) -> Void,
+                errorHandler: @escaping (Error) -> Void) {
+        let q = queue ?? DispatchQueue.main
+        let request = client.files.upload(path: dir, input: fileData)
+        let responsable = AnyDropboxResponsable<Files.FileMetadata, Files.UploadError, UploadRequest<Files.FileMetadataSerializer, Files.UploadErrorSerializer>>(dropboxResponsable: request.response)
+        let observable = observableDropboxResponse(queue: q, responsable: responsable)
+        observable
+            .subscribe(onNext: { completionHandler($0) },
+                       onError: { errorHandler($0) },
+                       onCompleted: { print("upload completed.") })
+            .addDisposableTo(disposeBag)
+    }
     
     
     func maxTailingInt(among names: [String], seperator: String) -> Int? {
