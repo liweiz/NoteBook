@@ -111,8 +111,115 @@ protocol DropboxWorkable : FileSystemWorkable, RxWorkable {
 
 extension CallError : Error {}
 
-
 extension DropboxWorkable {
+    
+    func handle(error: Error) {
+        
+    }
+    
+    func handleError(unknown: () -> Void,
+                     invalidCursor: () -> Void,
+                     malformedPath: () -> Void,
+                     notFound: () -> Void,
+                     noPermission: () -> Void,
+                     needDifferentName: () -> Void,
+                     noSpace: ()-> Void,
+                     _ err: Error) {
+        switch err {
+        case let list as Files.ListFolderError:
+            switch list {
+            case .path(let lookupError):
+                /// Get into nested.
+                if let e = lookupError as? Error {
+                    handleError(unknown: unknown, invalidCursor: invalidCursor, malformedPath: malformedPath, notFound: notFound, noPermission: noPermission, needDifferentName: needDifferentName, noSpace: noSpace, e)
+                } else {
+                    unknown()
+                }
+            default:
+                /// Unknown.
+                unknown()
+            }
+        case let listC as Files.ListFolderContinueError:
+            switch listC {
+            case .path(let lookupError):
+                /// Get into nested.
+                if let e = lookupError as? Error {
+                    handleError(unknown: unknown, invalidCursor: invalidCursor, malformedPath: malformedPath, notFound: notFound, noPermission: noPermission, needDifferentName: needDifferentName, noSpace: noSpace, e)
+                } else {
+                    unknown()
+                }
+            case .reset:
+                /// Cursor not valid any more. Restart new listing needed.
+                invalidCursor()
+            default:
+                /// Unknown.
+                unknown()
+            }
+        case let lookup as Files.LookupError:
+            switch lookup {
+            case .malformedPath:
+                /// Path alert needed.
+                malformedPath()
+            case .notFound:
+                /// File/folder to find not found.
+                notFound()
+            case .restrictedContent:
+                /// Permission alert needed.
+                noPermission()
+            default:
+                /// Unknown.
+                unknown()
+            }
+        case let upload as Files.UploadError:
+            switch upload {
+            case .path(let uploadWriteFailed):
+                /// Get into nested.
+                if let e = uploadWriteFailed as? Error {
+                    handleError(unknown: unknown, invalidCursor: invalidCursor, malformedPath: malformedPath, notFound: notFound, noPermission: noPermission, needDifferentName: needDifferentName, noSpace: noSpace, e)
+                } else {
+                    unknown()
+                }
+            default:
+                /// Unknown.
+                unknown()
+            }
+        case let createFolder as Files.CreateFolderError:
+            switch createFolder {
+            case .path(let writeErr):
+                /// Get into nested.
+                if let e = writeErr as? Error {
+                    handleError(unknown: unknown, invalidCursor: invalidCursor, malformedPath: malformedPath, notFound: notFound, noPermission: noPermission, needDifferentName: needDifferentName, noSpace: noSpace, e)
+                } else {
+                    unknown()
+                }
+            default:
+                /// Unknown.
+                unknown()
+            }
+        case let write as Files.WriteError:
+            switch write {
+            case .conflict, .disallowedName:
+                /// Name change needed.
+                needDifferentName()
+            case .noWritePermission:
+                /// Permission alert needed.
+                noPermission()
+            case .insufficientSpace:
+                /// Space alert needed.
+                noSpace()
+            case .malformedPath:
+                /// Path alert needed.
+                malformedPath()
+            default:
+                /// Unknown.
+                unknown()
+            }
+        default:
+            /// Unknown.
+            unknown()
+        }
+    }
+    
     func makeSureDirAvailable(client: DropboxClient,
                               on queue: DispatchQueue? = nil,
                               for dirPath: String,
@@ -121,10 +228,41 @@ extension DropboxWorkable {
         let q = queue ?? DispatchQueue.main
         let request = client.files.listFolder(path: dirPath)
         let responsable = AnyDropboxResponsable<Files.ListFolderResult, Files.ListFolderError, RpcRequest<Files.ListFolderResultSerializer, Files.ListFolderErrorSerializer>>(dropboxResponsable: request.response)
-        let observable = observableDropboxResponse(responsable: responsable)
+        let observable = observableDropboxResponse(queue: q, responsable: responsable)
         observable
-            .subscribe(onNext: { doneHandler(dirPath) })
+            .subscribe(onNext: { _ in
+                doneHandler(dirPath)
+            },
+                       onError: {
+                        guard let e = $0 as? Files.ListFolderError else {
+                            errorHandler($0)
+                        }
+                        
+                        switch e {
+                        case .path(let pathError):
+                            switch pathError {
+                            case .notFound:
+                                guard let url = URL(string: dirPath) else {
+                                    errorHandler($0)
+                                }
+                                let urlAbove = url.deletingLastPathComponent()
+                                createFolder(client: client, on: q, with: url.lastPathComponent, under: urlAbove.absoluteString, nameConflictHandler: <#T##() -> Void#>, completionHandler: <#T##(Files.FolderMetadataSerializer.ValueType) -> Void#>, errorHandler: <#T##(Error) -> Void#>)
+                        }
+            })
             .addDisposableTo(disposeBag)
+    }
+    
+    func components(in url: String) -> [String] {
+        return URL(fileURLWithPath: url).pathComponents
+    }
+    
+    func dirPathAvailbe(client: DropboxClient,
+                        on queue: DispatchQueue? = nil,
+                        given dir: String,
+                        doneHandler: @escaping (String) -> Void,
+                        errorHandler: @escaping (Error) -> Void) {
+        let q = queue ?? DispatchQueue.main
+        let request = client.files.listFolder(path: <#T##String#>)
     }
     
     func continueListing(client: DropboxClient,
@@ -133,9 +271,10 @@ extension DropboxWorkable {
                          previousResults: [Files.Metadata],
                          doneHandler: @escaping ([Files.Metadata]) -> Void,
                          errorHandler: @escaping (Error) -> Void) {
+        let q = queue ?? DispatchQueue.main
         let request = client.files.listFolderContinue(cursor: cursor)
         let responsable = AnyDropboxResponsable<Files.ListFolderResult, Files.ListFolderContinueError, RpcRequest<Files.ListFolderResultSerializer, Files.ListFolderContinueErrorSerializer>>(dropboxResponsable: request.response)
-        let observable = observableDropboxResponse(responsable: responsable)
+        let observable = observableDropboxResponse(queue: q, responsable: responsable)
         observable
             .subscribe(onNext: { result in
             if result.hasMore {
@@ -208,11 +347,23 @@ extension DropboxWorkable {
                       errorHandler: @escaping (Error) -> Void) {
         let q = queue ?? DispatchQueue.main
         let request = client.files.createFolder(path: dir + "/" + name)
-        let responsable = AnyDropboxResponsable<Files.FolderMetadata, Files.CreateFolderError, RpcRequest<Files.FolderMetadataSerializer, Files.CreateFolderErrorSerializer>>(dropboxResponsable: request.response)
+        let responsable = AnyDropboxResponsable<
+            Files.FolderMetadata,
+            Files.CreateFolderError,
+            RpcRequest<Files.FolderMetadataSerializer, Files.CreateFolderErrorSerializer>
+            >(dropboxResponsable: request.response)
         let observable = observableDropboxResponse(queue: q, responsable: responsable)
         observable
             .subscribe(onNext: { completionHandler($0) },
-                       onError: { errorHandler($0) },
+                       onError: {
+                        if let e = $0 as? Files.CreateFolderError {
+                            switch e {
+                            case .path(_):
+                                
+                            }
+                        }
+                        errorHandler($0)
+            },
                        onCompleted: { print("folderCreation completed.") })
             .addDisposableTo(disposeBag)
     }
@@ -252,6 +403,6 @@ extension DropboxWorkable {
         return ints.reduce(ints.first!, { max($0, $1) })
     }
     
-
+        
 }
 
