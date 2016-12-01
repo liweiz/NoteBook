@@ -17,6 +17,7 @@
 		EE4185191DD3A9A200BCA260 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE41850C1DD3A96F00BCA260 /* Alamofire.framework */; };
 		EE41851B1DD3AA7900BCA260 /* DropboxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */; };
 		EE41851F1DD3AF9900BCA260 /* FileSystemPickerCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41851E1DD3AF9900BCA260 /* FileSystemPickerCtl.swift */; };
+		EE8E42F61DF08872007487BC /* ConvertedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8E42F51DF08872007487BC /* ConvertedError.swift */; };
 		EEC040D11DD39F5400AAFD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC040D01DD39F5400AAFD5D /* AppDelegate.swift */; };
 		EEC040D31DD39F5400AAFD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC040D21DD39F5400AAFD5D /* ViewController.swift */; };
 		EEC040D81DD39F5400AAFD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC040D71DD39F5400AAFD5D /* Assets.xcassets */; };
@@ -333,6 +334,7 @@
 		EE4185001DD3A96F00BCA260 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxWorker.swift; sourceTree = "<group>"; };
 		EE41851E1DD3AF9900BCA260 /* FileSystemPickerCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemPickerCtl.swift; sourceTree = "<group>"; };
+		EE8E42F51DF08872007487BC /* ConvertedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertedError.swift; sourceTree = "<group>"; };
 		EEC040CD1DD39F5400AAFD5D /* NoteBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC040D01DD39F5400AAFD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEC040D21DD39F5400AAFD5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				EEC040DC1DD39F5400AAFD5D /* Info.plist */,
 				EE41851A1DD3AA7900BCA260 /* DropboxWorker.swift */,
 				EE1F212A1DD5FBF8004721E8 /* StringHelper.swift */,
+				EE8E42F51DF08872007487BC /* ConvertedError.swift */,
 			);
 			path = NoteBook;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				EE41851F1DD3AF9900BCA260 /* FileSystemPickerCtl.swift in Sources */,
 				EE1F212B1DD5FBF8004721E8 /* StringHelper.swift in Sources */,
 				EEC040D11DD39F5400AAFD5D /* AppDelegate.swift in Sources */,
+				EE8E42F61DF08872007487BC /* ConvertedError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
