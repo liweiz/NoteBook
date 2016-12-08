@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import NoteBook
+import Gloss
 
 class NoteBookTests: XCTestCase {
     
@@ -21,9 +22,11 @@ class NoteBookTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testToJson() {
+        /// Given
+        let aNote = Note(url: "/sd/dsa", tags: ["a", "43"], annotation: "xxx", content: "setup code here", location: "page 42")
+        XCTAssertNotNil(aNote.toJSON())
+        print("note in JSON: \(aNote.toJSON())")
     }
     
     func testPerformanceExample() {

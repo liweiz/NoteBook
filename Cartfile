@@ -1,6 +1,6 @@
-# SwiftyDropbox
-github "dropbox/SwiftyDropbox" ~> 4.1.0
+# Gloss
+github "hkellaway/Gloss"
 # Swiftz
 github "typelift/Swiftz" ~> 0.6.0
-# RxSwift
-github "ReactiveX/RxSwift" ~> 3.0
+# SwiftyDropbox
+github "https://github.com/dropbox/SwiftyDropbox" ~> 4.1.1
